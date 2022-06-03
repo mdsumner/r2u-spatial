@@ -8,7 +8,8 @@
 
 FROM eddelbuettel/r2u:jammy
 
-RUN apt-get update \
+RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable \
+    && apt-get update \
     && sudo apt-get install emacs -y \
     && sudo apt-get install tmux -y \
     ## Provision with spatial and other R packages
